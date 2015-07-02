@@ -54,6 +54,7 @@ public class CommandButtonRenderer extends CoreRenderer{
 	if (!component.isRendered()) {
 	    return;
 	}
+        
 	Map<String, Object> attrs = component.getAttributes();
 	ResponseWriter rw = context.getResponseWriter();
 	
@@ -107,25 +108,28 @@ public class CommandButtonRenderer extends CoreRenderer{
 	String icon = A.asString(attrs.get(A.ICON));
 	String faicon = A.asString(attrs.get(A.ICONAWESOME));
 	boolean fa = false; // flag to indicate wether the selected icon set is
+        
 	// Font Awesome or not.
 	if (faicon != null) {
 	    icon = faicon;
 	    fa = true;
 	}
+        
 	if (icon != null) {
 	    Object ialign = attrs.get(A.ICON_ALIGN); // Default Left
 	    if (ialign != null && ialign.equals(A.RIGHT)) {
-		rw.writeText(value + C.SP, null);
+		writteText(rw, value + C.SP, null);
+                
 		R.encodeIcon(rw, component, icon, fa);
 		// !//R.encodeIcon(rw, this, icon, white);
 	    } else {
 		R.encodeIcon(rw, component, icon, fa);
 		// !//R.encodeIcon(rw, this, icon, white);
-		rw.writeText(C.SP + value, null);
+		writteText(rw, C.SP + value, null);
 	    }
 	    
 	} else {
-	    rw.writeText(value, null);
+	    writteText(rw, value, null);
 	}
 	rw.endElement(H.BUTTON);
 	

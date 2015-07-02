@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+    <h:head>
+        <title>CommandButton IT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form prependId="false" >
+            <b:container>
+                <b:commandButton id="cmd1" value="This is the button text" />
+                
+                <b:commandButton id="cmd2" >
+                    This text
+                    <h:graphicImage url="/image/sample.png"  />
+                    surrounds graphic image.
+                </b:commandButton>
+                
+                
+                <b:commandButton id="cmd3"  >
+                    This text
+                    <img src="/image/sample.png" />
+                    surrounds graphic image.
+                </b:commandButton>
+                
+                <b:commandButton id="cmd4" value="This is the button Text">
+                    This text
+                    <h:graphicImage url="/image/sample.png"  />
+                    surrounds graphic image.
+                </b:commandButton>
+            </b:container>
+        </h:form>
+    </h:body>
+</html>

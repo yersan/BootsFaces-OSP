@@ -108,4 +108,14 @@ public class CoreRenderer extends Renderer{
         return Boolean.valueOf(String.valueOf(component.getAttributes().get("disabled"))) 
 		|| Boolean.valueOf(String.valueOf(component.getAttributes().get("readonly")));
     }
+    
+    public void writteText(ResponseWriter rs, Object text, String property) throws IOException{
+        if ( text == null ) return;
+        rs.writeText(text, property);
+    }
+    
+    public void writteText(ResponseWriter rs, Object text, UIComponent component, String property) throws IOException{
+        if ( text == null ) return;
+        rs.writeText(text, component, property);
+    }
 }
